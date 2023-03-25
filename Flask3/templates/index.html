@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Spam Detector</title>
+    <style>
+        
+    </style>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}"
+  </head>
+  <body>
+    <h1>Spam Detector</h1>
+    <form method="POST" action="/classify">
+      <label for="text">Enter your text:</label>
+      <input type="text" name="text" id="text" required>
+      <button type="submit">Classify</button>
+    </form>
+    <div id="result"></div>
+    <script>
+
+      var form = document.querySelector('form');
+      var resultDiv = document.getElementById('result');
+      
+      form.addEventListener('submit', function(event)
+       {
+  
+        event.preventDefault();
+        
+        var inputBox = document.getElementById('text');
+        var input = inputBox.value;
+        
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200)
+          {
+            resultDiv.innerHTML = this.responseText;
+          }
+        };
+        xhttp.open('POST', '/classify', true);
+        xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhttp.send('text=' + input);
+      });
+    </script>
+  </body>
+</html>

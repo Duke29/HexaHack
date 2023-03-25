@@ -1,0 +1,47 @@
+body {
+    background: linear-gradient(to bottom, #1e64a2, #16b6be);
+    font-family: Quicksand, sans-serif;
+    font-size: 16px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  form {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    width: 300px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  button[type="spam"] {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #039cee;
+    color: #811ab4;
+    font-size: 16px;
+    cursor: pointer;
+    
+  }
+  button:hover {
+    background-color: #1adbd7;
+  }
+  #result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+  }
